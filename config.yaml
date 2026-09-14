@@ -1,0 +1,16 @@
+# ==============================================================================
+# Configuration file for OpenAPI Comparator
+# ==============================================================================
+
+# Default directory where CLI json reports are saved
+default_output_dir: output
+
+# Temporary file used to share data between CLI and Streamlit
+cache_file: .cache/temp_data.json
+
+cli:
+  # Output raw JSON to terminal stdout (bool)
+  stdout: false
+
+  # Automatically start Streamlit UI (bool)
+  ui: false

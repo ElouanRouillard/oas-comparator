@@ -1,0 +1,23 @@
+# Python cache and temporary files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Application temporary cache
+.cache/
+
+# Generated reports directory (preserve structure via .gitkeep)
+output/*
+!output/.gitkeep
+
+# IDE and system configuration files
+.vscode/
+.idea/
+.DS_Store
+*.swp

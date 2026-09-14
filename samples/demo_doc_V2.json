@@ -1,0 +1,148 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Demo API Title B",
+    "description": "This is a modified global description for the second demo file to test comparison metrics.",
+    "termsOfService": "https://example.com/terms-updated",
+    "contact": {
+      "name": "Updated Support Team",
+      "url": "https://example.com/support-b",
+      "email": "support-b@example.com"
+    },
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://staging-api.example.com/v2",
+      "description": "Staging server placeholder B"
+    }
+  ],
+  "tags": [
+    {
+      "name": "tag-placeholder-1",
+      "description": "Updated tag description for comparison"
+    },
+    {
+      "name": "tag-exclusive-b",
+      "description": "Exclusive tag only present in file B"
+    }
+  ],
+  "security": [
+    {
+      "ApiKeyAuth": []
+    }
+  ],
+  "paths": {
+    "/ressource-complete": {
+      "get": {
+        "tags": [
+          "tag-placeholder-1"
+        ],
+        "summary": "Modified summary of the complete endpoint",
+        "description": "Updated description with different metrics and expectations.",
+        "operationId": "getRessourceCompleteModified",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "Modified query parameter description",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 999
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Different success description for comparison",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelePlaceholder"
+                },
+                "example": {
+                  "id": 999,
+                  "fullName": "modified-placeholder-name",
+                  "flag": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ressource-incompletes": {
+      "get": {
+        "operationId": "getRessourceIncompletes",
+        "responses": {
+          "200": {
+            "description": "Lacks description coverage and examples."
+          }
+        }
+      }
+    },
+    "/ressource-exclusive-b": {
+      "post": {
+        "tags": [
+          "tag-exclusive-b"
+        ],
+        "summary": "Exclusive endpoint in file B",
+        "operationId": "postRessourceExclusiveB",
+        "responses": {
+          "201": {
+            "description": "Resource successfully created in version B"
+          }
+        }
+      }
+    },
+    "/metrics": {
+      "get": {
+        "operationId": "getMetrics",
+        "responses": {
+          "200": {
+            "description": "Metrics endpoint placeholder without examples to test coverage variations"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ModelePlaceholder": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Changed to integer for comparison"
+          },
+          "fullName": {
+            "type": "string",
+            "description": "Renamed property name"
+          },
+          "flag": {
+            "type": "boolean",
+            "description": "New boolean property added"
+          }
+        }
+      },
+      "BetaFeatureModel": {
+        "type": "object",
+        "properties": {
+          "betaToken": {
+            "type": "string",
+            "description": "Exclusive schema model property"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-KEY",
+        "description": "New security scheme replacing OAuth2 for comparative analysis"
+      }
+    }
+  }
+}

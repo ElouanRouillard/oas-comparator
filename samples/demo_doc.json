@@ -1,0 +1,82 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Demo API Title A",
+    "description": "A baseline API specification designed to show lower coverage metrics.",
+    "contact": {
+      "name": "Placeholder Support",
+      "email": "support@example.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.example.com/v1",
+      "description": "Production server A"
+    }
+  ],
+  "externalDocs": {
+    "description": "Updated external documentation reference",
+    "url": "https://example.com/docs-v2"
+  },
+  "paths": {
+    "/ressource-complete": {
+      "get": {
+        "summary": "Complete resource endpoint",
+        "description": "This endpoint has full documentation and examples.",
+        "operationId": "getRessourceComplete",
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" }
+                  }
+                },
+                "example": {
+                  "id": "123"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ressource-incompletes": {
+      "get": {
+        "operationId": "getRessourceIncompletes",
+        "responses": {
+          "200": {
+            "description": "Lacks description coverage and examples."
+          }
+        }
+      }
+    },
+    "/metrics": {
+      "get": {
+        "operationId": "getMetrics",
+        "responses": {
+          "200": {
+            "description": "Metrics endpoint placeholder."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-KEY"
+      }
+    }
+  }
+}
